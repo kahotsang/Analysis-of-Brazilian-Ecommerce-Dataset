@@ -11,6 +11,19 @@ The objective of this project is to analyze the delivery time of each order, usi
 ## Description of Dataset
 The RawDataset contained in this project was adopted from the [original dataset](https://www.kaggle.com/olistbr/brazilian-ecommerce) downloadable from Kaggle. The CleanDataset folder contains the cleaned dataset, together with some GDP information of each Brazilian city and state for further analysis.
 
+## Library Installation
+I used R and WinBUGS (for Bayesian Modelling) in this project. The followings are some necessary R packages for implementing my project:
+* dplyr
+* readr
+* lme4
+* R2WinBUGS
+
+## Methodology
+I perform regression analysis on the dataset. Particularly, I model the delivery time using Generalized Linear Mixed Effect Model (GLMM) with Gamma distribution, 
+
+## Conclusion
+
+
 ## Credit
 Thanks to Olist for releasing this dataset.
 
