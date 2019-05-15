@@ -9,14 +9,13 @@ The RawDataset contained in this project was adopted from the [original dataset]
 * sellers_olist_public_dataset_: contains the seller information of each ordered item
 
 ## Data Cleaning
-However, there are some problematic entries at the geolocation table. First, there are some simulated locations that are actually outside the boundary of Brazil and should be removed. Second, there are some mistaked data inputs which will lead to high variance of the estimated location of each city (i.e. some simulated locations are associated with a wrong city). Thus, I also remove those wrong entries by cross-checking with the actual location of a city from some online sources. 
-
-The CleanDataset folder contains the dataset after the above cleaning procedure, together with some GDP information of each Brazilian city and state for further analysis.
+However, there are some problematic entries at the geolocation table, which should be removed. The CleanDataset folder contains the cleaned dataset, together with some GDP information of each Brazilian city and state for further analysis.
 
 ## Feature Engineering
-The next step is to extract useful features from the raw dataset.
-
-
+The next step is to extract useful features from the raw dataset. In this project, we focus on the impact of the following features:
+* distance between seller and buyer
+* product size and weights
+* the prosperity effect of the customer / seller city (reflected by the GDP level)
 
 ## Credit
 Thanks to Olist for releasing this dataset.
