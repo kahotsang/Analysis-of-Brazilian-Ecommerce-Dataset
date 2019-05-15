@@ -19,7 +19,7 @@ I used R and WinBUGS (for Bayesian Modelling) in this project. The followings ar
 * R2WinBUGS
 
 ## Methodology
-I perform regression analysis on the dataset. Particularly, I model the delivery time using Generalized Linear Mixed Effect Model (GLMM) with Gamma distribution. This modeling is useful when I assume there is some correlation across the observations within the same cluster (here each cluster means a city).
+I perform regression analysis on the dataset. Particularly, I model the delivery time using Generalized Linear Mixed Effect Model (GLMM) with Gamma distribution. This modeling is useful when I assume there is some correlation across the observations within the same cluster (here means the delivery time of order within the same customer city is correlated).
 
 ## Conclusion
 
