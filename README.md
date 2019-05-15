@@ -1,21 +1,15 @@
 # Analysis-of-Brazilian-Ecommerce-Dataset
-This project is based on the dataset which was provided by Olist and was released by Kaggle. Olist is the largest department store in Brazilian marketplaces. This dataset contains information of 100k orders made at Olist from 2016 to 2018. Please refer to [here](https://www.kaggle.com/olistbr/brazilian-ecommerce) for the details of the original dataset. There could be lots of possible work from this dataset, including sales forecasting, customer review analysis, delivery time analysis, etc. The objective of this project is to analyze the delivery time of each order, using visualization and some statistical techniques (particularly regression analysis).
+This project is based on the dataset which was provided by Olist and was released by Kaggle. Olist is the largest department store in Brazilian marketplaces. This dataset contains information of 100k orders made at Olist from 2016 to 2018. Please refer to [here](https://www.kaggle.com/olistbr/brazilian-ecommerce) for the details of the original dataset. There could be lots of possible work from this dataset, including sales forecasting, customer review analysis, delivery time analysis, etc. 
+
+## Objective
+The objective of this project is to analyze the delivery time of each order, using visualization and some statistical techniques (particularly regression analysis). I am interested in the impact of the following features on the delivery time:
+* the location of customer / seller
+* distance between customer and seller
+* product information
+* the prosperity effect of the customer / seller city
 
 ## Description of Dataset
-The RawDataset contained in this project was adopted from the [original dataset](https://www.kaggle.com/olistbr/brazilian-ecommerce) downloadable from Kaggle. Since this project only aims to analyze the delivery time, I only include the relevant tables in the RawDataset. The following shows some brief information about each included table:
-* olist_public_dataset_v2: contains the order information
-* geolocation_olist_public_dataset: contains the geolocation information of each Brazilian city. Particularly, each rows represents a simulated location together with the corresponding city
-* product_measures_olist_public_dataset_: contains the product information
-* sellers_olist_public_dataset_: contains the seller information of each ordered item
-
-## Data Cleaning
-However, there are some problematic entries at the geolocation table, which should be removed. The CleanDataset folder contains the cleaned dataset, together with some GDP information of each Brazilian city and state for further analysis.
-
-## Feature Engineering
-The next step is to extract useful features from the raw dataset. In this project, we focus on the impact of the following features:
-* distance between seller and buyer
-* product size and weights
-* the prosperity effect of the customer / seller city (reflected by the GDP level)
+The RawDataset contained in this project was adopted from the [original dataset](https://www.kaggle.com/olistbr/brazilian-ecommerce) downloadable from Kaggle. The CleanDataset folder contains the cleaned dataset, together with some GDP information of each Brazilian city and state for further analysis.
 
 ## Credit
 Thanks to Olist for releasing this dataset.
