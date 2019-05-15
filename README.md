@@ -2,7 +2,7 @@
 This project is based on the dataset which was provided by Olist and was released by Kaggle. Olist is the largest department store in Brazilian marketplaces. This dataset contains information of 100k orders made at Olist from 2016 to 2018. Please refer to [here](https://www.kaggle.com/olistbr/brazilian-ecommerce) for the details of the original dataset. There could be lots of possible work from this dataset, including sales forecasting, customer review analysis, delivery time analysis, etc. 
 
 ## Objective
-The objective of this project is to analyze the delivery time of each order, using visualization and some statistical techniques (particularly regression analysis). I am interested in the impact of the following features on the delivery time:
+The objective of this project is to analyze the delivery time of each order, using visualization and some statistical techniques (particularly regression analysis). I am interested in the impact of the following aspects on the delivery time:
 * the location of customer / seller
 * distance between customer and seller
 * product information
