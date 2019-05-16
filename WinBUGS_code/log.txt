@@ -1,56 +1,59 @@
 display(log)
-check(C:/Users/s1155063404/Desktop/STAT 5060/Final Project/model/model_clustr2.txt)
+check(C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/WinBUGS_code/model.txt)
 model is syntactically correct
-data(C:/Users/s1155063404/Desktop/STAT 5060/Final Project/model/data1.txt)
+data(C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/WinBUGS_code/data.txt)
 data loaded
 compile(1)
 model compiled
-inits(1,C:/Users/s1155063404/Desktop/STAT 5060/Final Project/model/inits1.txt)
+inits(1,C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/WinBUGS_code/inits1.txt)
 this chain contains uninitialized variables
 gen.inits()
 initial values generated, model initialized
 thin.updater(1)
-update(500)
+update(5)
 set(beta)
 set(nu1)
 set(nu2)
 set(sig_u)
 set(sig_a)
-set(sig_nu1)
-set(sig_nu2)
 set(b)
 set(deviance)
 dic.set()
-command #Bugs:dic.set cannot be executed (is greyed out)
-update(500)
-coda(*,C:/Users/s1155063404/Desktop/STAT 5060/Final Project/model/coda)
+update(5)
+coda(*,C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/WinBUGS_code/coda)
 stats(*)
 
 Node statistics
 	 node	 mean	 sd	 MC error	2.5%	median	97.5%	start	sample
-	b	0.2779	0.003455	6.95E-4	0.2672	0.279	0.2816	501	500
-	beta[1]	0.04115	0.001961	3.625E-4	0.03644	0.04114	0.04441	501	500
-	beta[2]	-0.00494	0.001786	2.366E-4	-0.008885	-0.004579	-0.002226	501	500
-	beta[3]	0.01003	0.001819	3.315E-4	0.006902	0.009601	0.01396	501	500
-	deviance	608300.0	1860.0	398.8	607400.0	607600.0	614800.0	501	500
-	nu1[1]	2.583	0.04744	0.01021	2.48	2.607	2.645	501	500
-	nu1[2]	0.1222	0.009309	0.001605	0.1068	0.1214	0.1422	501	500
-	nu1[3]	-0.1365	0.02888	0.006135	-0.215	-0.1314	-0.09632	501	500
-	nu1[4]	-0.04188	0.02525	0.005395	-0.1046	-0.03644	-0.009664	501	500
-	nu2[1]	0.2689	0.05008	0.0108	0.2121	0.255	0.3791	501	500
-	nu2[2]	-0.04294	0.01036	0.002063	-0.06158	-0.04402	-0.02399	501	500
-	nu2[3]	0.03489	0.009191	0.001825	0.01868	0.03305	0.05136	501	500
-	nu2[4]	-0.03012	0.004153	6.98E-4	-0.03668	-0.03045	-0.02071	501	500
-	sig_a	0.076	0.01274	0.002742	0.06501	0.07058	0.1134	501	500
-	sig_nu1	0.1169	0.04194	0.008265	0.0582	0.1077	0.2025	501	500
-	sig_nu2	0.09568	0.02141	0.00357	0.05963	0.09313	0.142	501	500
-	sig_u	0.1083	0.006564	0.001341	0.09926	0.1075	0.1286	501	500
+	b	0.08883	3.969E-4	2.287E-4	0.08821	0.08885	0.08933	6	5
+	beta[1]	0.0379	0.0144	0.01267	0.01622	0.04313	0.05396	6	5
+	beta[2]	0.02019	0.002714	0.002527	0.01798	0.01798	0.02352	6	5
+	beta[3]	0.02896	0.002579	0.001488	0.0238	0.0302	0.03039	6	5
+	deviance	1.113E+6	1371.0	1129.0	1.111E+6	1.113E+6	1.115E+6	6	5
+	nu1[1]	0.007376	0.005925	0.001271	-0.001155	0.007852	0.01626	6	5
+	nu1[2]	0.0094	0.008846	7.819E-4	-0.004754	0.009814	0.02108	6	5
+	nu1[3]	-0.003637	0.007715	0.005578	-0.01193	-0.007522	0.006244	6	5
+	nu1[4]	-0.001625	0.00762	0.005519	-0.0108	0.002181	0.006741	6	5
+	nu1[5]	-0.01275	0.004576	0.001468	-0.01694	-0.01502	-0.004998	6	5
+	nu1[6]	9.609E-4	0.004008	0.002602	-0.005355	0.002708	0.006059	6	5
+	nu2[1]	-0.004286	0.003893	0.001948	-0.01191	-0.002751	-0.001361	6	5
+	nu2[2]	-0.0194	0.01307	0.008974	-0.03737	-0.02185	0.003285	6	5
+	nu2[3]	0.008737	0.00775	0.003207	-0.00509	0.01196	0.01664	6	5
+	nu2[4]	0.008326	0.01217	0.006705	-0.01402	0.01042	0.02293	6	5
+	nu2[5]	0.007867	0.01441	0.004799	-0.01456	0.007596	0.02765	6	5
+	nu2[6]	0.001967	0.009077	8.745E-4	-0.01097	-1.422E-5	0.01639	6	5
+	sig_a	0.3185	0.003656	7.274E-4	0.3145	0.3161	0.323	6	5
+	sig_u	0.3105	0.001773	0.001021	0.3089	0.3102	0.314	6	5
 dic.stats()
 
 DIC
-history(*,C:/Users/s1155063404/Desktop/STAT 5060/Final Project/model/history.odc)
+Dbar = post.mean of -2logL; Dhat = -2LogL at post.mean of stochastic nodes
+	Dbar	Dhat	pD	DIC	
+Y	1112800.000	1112800.000	3.307	1112810.000	
+total	1112800.000	1112800.000	3.307	1112810.000	
+history(*,C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/WinBUGS_code/history.odc)
 
 History
 
-save(C:/Users/s1155063404/Desktop/STAT 5060/Final Project/model/log.odc)
-save(C:/Users/s1155063404/Desktop/STAT 5060/Final Project/model/log.txt)
+save(C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/WinBUGS_code/log.odc)
+save(C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/WinBUGS_code/log.txt)
