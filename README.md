@@ -14,6 +14,8 @@ I used R and WinBUGS (for Bayesian Modelling) in this project. The followings ar
 * lme4
 * R2WinBUGS
 
+For the installation of WinBUGS, please refer to [here](https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/)
+
 ## Methodology
 I perform regression analysis on the dataset. Particularly, I model the delivery time using multi-level model (also called Generalized Linear Mixed Effect Model (GLMM). The first-level here refers to each order, while the second-level here refers to the customer city where the order is placed. This modeling is useful due to the following reasons:
 1. It is likely that there is some correlation across the order delivery time for the orders within the same customer city.
