@@ -2,11 +2,7 @@
 This project is based on the dataset which was provided by Olist and was released by Kaggle. Olist is the largest department store in Brazilian marketplaces. This dataset contains information of 100k orders made at Olist from 2016 to 2018. Please refer to [here](https://www.kaggle.com/olistbr/brazilian-ecommerce) for the details of the original dataset. There could be lots of possible work from this dataset, including sales forecasting, customer review analysis, delivery time analysis, etc. 
 
 ## Objective
-The objective of this project is to analyze the delivery time of each order, using visualization and some statistical techniques (particularly regression analysis). I am interested in the impact of the following aspects on the delivery time:
-* the location of customer / seller
-* distance between customer and seller
-* product information
-* the prosperity effect of the customer / seller city
+The objective of this project is to analyze the delivery time of each order, using visualization and some statistical techniques (particularly regression analysis). I am particularly interested in the effect of _the location of customer / seller_ on the delivery time.
 
 ## Description of Dataset
 The RawDataset contained in this project was adopted from the [original dataset](https://www.kaggle.com/olistbr/brazilian-ecommerce) downloadable from Kaggle. The CleanDataset folder contains the cleaned dataset, together with some GDP information of each Brazilian city and state for further analysis.
@@ -19,7 +15,9 @@ I used R and WinBUGS (for Bayesian Modelling) in this project. The followings ar
 * R2WinBUGS
 
 ## Methodology
-I perform regression analysis on the dataset. Particularly, I model the delivery time using Generalized Linear Mixed Effect Model (GLMM) with Gamma distribution. This modeling is useful when I assume there is some correlation across the observations within the same cluster (here means the delivery time of order within the same customer city is correlated).
+I perform regression analysis on the dataset. Particularly, I model the delivery time using multi-level model (also called Generalized Linear Mixed Effect Model (GLMM). The first-level here refers to each order, while the second-level here refers to the customer city where the order is placed. This modeling is useful due to the following reasons:
+1. It is likely that there is some correlation across the order delivery time for the orders within the same customer city.
+2. I am interested in how the location of the customer affects the order delivery time (i.e. the second-level effect).
 
 ## Conclusion
 
