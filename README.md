@@ -22,7 +22,9 @@ I perform regression analysis on the dataset. Particularly, I model the delivery
 2. I am interested in how the location of the customer affects the order delivery time (i.e. the second-level effect).
 
 ## Conclusion
-
+1. The distance between buyer and seller has a strong effect on the delivery time
+2. There exists correlation for delivery time of the customers within same city
+3. The delivery time is affected by the location of the customer city, especially its latitude
 
 ## Credit
 Thanks to Olist for releasing this dataset.
