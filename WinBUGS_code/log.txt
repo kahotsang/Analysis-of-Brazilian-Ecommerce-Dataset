@@ -1,7 +1,7 @@
 display(log)
-check(C:/Users/Ka Ho/Desktop/Projects/Analysis-of-Brazilian-Ecommerce-Dataset/WinBUGS_code/base.txt)
+check(C:/Users/Ka Ho/Desktop/Projects/Analysis-of-Brazilian-Ecommerce-Dataset/WinBUGS_code/model.txt)
 model is syntactically correct
-data(C:/Users/Ka Ho/Desktop/Projects/Analysis-of-Brazilian-Ecommerce-Dataset/WinBUGS_code/data_base.txt)
+data(C:/Users/Ka Ho/Desktop/Projects/Analysis-of-Brazilian-Ecommerce-Dataset/WinBUGS_code/data.txt)
 data loaded
 compile(1)
 model compiled
@@ -10,37 +10,44 @@ this chain contains uninitialized variables
 gen.inits()
 initial values generated, model initialized
 thin.updater(1)
-update(400)
-set(m1)
+update(500)
 set(beta)
-set(m2)
+set(nu1)
+set(nu2)
 set(sig_u)
 set(sig_a)
 set(b)
 set(deviance)
 dic.set()
-update(400)
+command #Bugs:dic.set cannot be executed (is greyed out)
+update(500)
 coda(*,C:/Users/Ka Ho/Desktop/Projects/Analysis-of-Brazilian-Ecommerce-Dataset/WinBUGS_code/coda)
 stats(*)
 
 Node statistics
 	 node	 mean	 sd	 MC error	2.5%	median	97.5%	start	sample
-	b	0.2687	0.01435	0.003264	0.2315	0.2755	0.2813	401	400
-	beta[1]	0.04042	0.001959	3.789E-4	0.0376	0.04043	0.04374	401	400
-	beta[2]	-0.005248	0.001261	1.764E-4	-0.008488	-0.005385	-0.002816	401	400
-	beta[3]	0.01173	0.002304	4.723E-4	0.008126	0.0118	0.01623	401	400
-	deviance	614800.0	10740.0	2452.0	607400.0	608800.0	644600.0	401	400
-	m1	2.589	0.01772	0.003957	2.53	2.594	2.604	401	400
-	m2	0.1926	0.008175	0.001691	0.1707	0.1945	0.2028	401	400
-	sig_a	0.1248	0.05411	0.01234	0.08407	0.09922	0.2784	401	400
-	sig_u	0.1539	0.05158	0.01178	0.114	0.1261	0.2895	401	400
+	b	0.2784	0.002777	5.367E-4	0.2695	0.279	0.2819	501	500
+	beta[1]	0.04131	0.001676	2.437E-4	0.03802	0.04166	0.04409	501	500
+	beta[2]	-0.004704	0.001423	1.925E-4	-0.007862	-0.004778	-0.001811	501	500
+	beta[3]	0.009603	0.001815	2.691E-4	0.006316	0.009718	0.01328	501	500
+	deviance	608500.0	2084.0	449.3	607400.0	607600.0	615100.0	501	500
+	nu1[1]	2.581	0.04608	0.009938	2.479	2.588	2.637	501	500
+	nu1[2]	0.1366	0.0129	0.00243	0.1135	0.1352	0.1607	501	500
+	nu1[3]	-0.1257	0.05112	0.01097	-0.2374	-0.1198	-0.06311	501	500
+	nu1[4]	-1.334E-4	0.006822	0.001226	-0.01251	-7.3E-4	0.01439	501	500
+	nu1[5]	-0.04834	0.03513	0.007533	-0.1226	-0.04067	0.003055	501	500
+	nu1[6]	0.01832	0.01045	0.002182	0.005186	0.01507	0.04291	501	500
+	nu2[1]	0.2284	0.02178	0.004681	0.197	0.2301	0.2673	501	500
+	nu2[2]	-0.0286	0.01067	0.002146	-0.04386	-0.03036	-9.323E-4	501	500
+	nu2[3]	0.02878	0.01527	0.003175	0.002503	0.02954	0.05942	501	500
+	nu2[4]	-0.009312	0.004266	7.55E-4	-0.01781	-0.009169	-0.001468	501	500
+	nu2[5]	-0.01494	0.009713	0.002008	-0.02941	-0.01836	0.003916	501	500
+	nu2[6]	-0.005553	0.002983	5.143E-4	-0.01214	-0.005296	-2.536E-4	501	500
+	sig_a	0.0768	0.0127	0.002727	0.06486	0.07248	0.118	501	500
+	sig_u	0.1154	0.008446	0.001764	0.1047	0.1132	0.1399	501	500
 dic.stats()
 
 DIC
-Dbar = post.mean of -2logL; Dhat = -2LogL at post.mean of stochastic nodes
-	Dbar	Dhat	pD	DIC	
-Y	614783.000	609699.000	5083.880	619867.000	
-total	614783.000	609699.000	5083.880	619867.000	
 history(*,C:/Users/Ka Ho/Desktop/Projects/Analysis-of-Brazilian-Ecommerce-Dataset/WinBUGS_code/history.odc)
 
 History

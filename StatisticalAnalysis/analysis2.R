@@ -5,6 +5,7 @@
 #which supports my observation that the location of customer city affects delivery time
 #-----------------------------------------------------------------------------
 library(R2WinBUGS)
+library(dplyr)
 library(readr)
 
 #The directory of the WinBUGS
@@ -51,12 +52,12 @@ init = list(beta=rep(0,3), m1=0, m2=0, tau_a=10, tau_u=10, b=0.5)
 para = c("m1", "beta", "m2", "sig_u", "sig_a", "b")
 
 #Run WinBUGS for Bayesian Inference
-sim = bugs(data="data_base.txt", inits=list(init),
-           parameters.to.save=para,
-           model.file="base.txt",
-           n.chains=1, n.iter=800,
-           bugs.directory = WinBUGS_path,
-           working.directory="../WinBUGS_code/")
+# sim = bugs(data="data_base.txt", inits=list(init),
+#            parameters.to.save=para,
+#            model.file="base.txt",
+#            n.chains=1, n.iter=800,
+#            bugs.directory = WinBUGS_path,
+#            working.directory="../WinBUGS_code/")
 
 #Create features for explaining the second-level effect:
 #Return the cluster label for each (state, city); Create the second-level features in this table.
@@ -117,27 +118,10 @@ geolocation = geolocation %>%
          distance2 = NULL,
          distance3 = NULL)
 
-#Compute distance to the capital of that state
-#location of the capital of each state
-location_capital = raw_GDP_state %>%
-  mutate(state = tolower(Abbreviation),
-         city = tolower(Capital_in_data)) %>%
-  select(city, state) %>%
-  left_join(geolocation %>%
-              select(state, city, lat, lng), by=c("state", "city")) %>%
-  mutate(capital_lat = lat,
-         capital_lng = lng) %>%
-  select(state, capital_lat, capital_lng)
-
-geolocation = geolocation %>%
-  left_join(location_capital, by="state") %>%
-  mutate(distance2capital = distance(ang2rad(lat), ang2rad(lng),
-                                     ang2rad(capital_lat), ang2rad(capital_lng)))
-
 #Add the geolocation features to the cluster table
 cluster = cluster %>%
   left_join(geolocation %>%
-              select(customer_state, customer_city, distance2wealthy, distance2capital, lat, lng), by=c("customer_state", "customer_city"))
+              select(customer_state, customer_city, distance2wealthy, lat), by=c("customer_state", "customer_city"))
 
 #Generate data for model: proposed
 K = nrow(dataset)
@@ -150,25 +134,23 @@ i = dataset$cluster
 #Cluster_level features
 W1 = standardize(cluster$rank)
 W2 = standardize(cluster$lat)
-W3 = standardize(cluster$lng)
-W4 = standardize(cluster$distance2wealthy)
-W5 = standardize(cluster$distance2capital)
+W3 = standardize(cluster$distance2wealthy)
 
 mu_b = rep(0, 3)
 tau_b = diag(rep(0.0001, 3))
-mu_nu = rep(0, 6)
-tau_nu = diag(rep(0.0001, 6))
+mu_nu = rep(0, 4)
+tau_nu = diag(rep(0.0001, 4))
 
 data = list(K=K, n_clust=n_clust, Y=Y, X=X, Z=Z, mu_b=mu_b, tau_b=tau_b, mu_nu=mu_nu, tau_nu=tau_nu,
-            i=i, W1=W1, W2=W2, W3=W3, W4=W4, W5=W5)
+            i=i, W1=W1, W2=W2, W3=W3)
 bugs.data(data, dir="../WinBUGS_code/", data.file = "data.txt")
 
-init = list(beta=rep(0,3), nu1=rep(0,6), nu2=rep(0,6), tau_a=10, tau_u=10, b=0.5)
+init = list(beta=rep(0,3), nu1=rep(0,4), nu2=rep(0,4), tau_a=10, tau_u=10, b=0.5)
 para = c("beta", "nu1", "nu2", "sig_u", "sig_a", "b")
 
-# sim = bugs(data="data.txt", inits=list(init),
-#            parameters.to.save=para,
-#            model.file="model.txt",
-#            n.chains=1, n.iter=1000,
-#            bugs.directory=WinBUGS_path,
-#            working.directory="../WinBUGS_code/")
+sim = bugs(data="data.txt", inits=list(init),
+           parameters.to.save=para,
+           model.file="model.txt",
+           n.chains=1, n.iter=1000,
+           bugs.directory=WinBUGS_path,
+           working.directory="../WinBUGS_code/")
