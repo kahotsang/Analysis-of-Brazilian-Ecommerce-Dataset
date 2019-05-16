@@ -17,14 +17,14 @@ I used R and WinBUGS (for Bayesian Modelling) in this project. The followings ar
 For the installation of WinBUGS, please refer to [here](https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/)
 
 ## Methodology
-I perform regression analysis on the dataset. Particularly, I model the delivery time using multi-level model (also called Generalized Linear Mixed Effect Model (GLMM). The first-level here refers to each order, while the second-level here refers to the customer city where the order is placed. This modeling is useful due to the following reasons:
+I perform regression analysis on the dataset. Particularly, I model the delivery time using multi-level model (also called Generalized Linear Mixed Effect Model (GLMM)). The first-level here refers to each order, while the second-level here refers to the customer city where the order is placed. This modeling is useful due to the following reasons:
 1. It is likely that there is some correlation across the order delivery time for the orders within the same customer city.
 2. I am interested in how the location of the customer affects the order delivery time (i.e. the second-level effect).
 
 ## Conclusion
 1. The distance between buyer and seller has a strong effect on the delivery time
 2. There exists correlation for delivery time of the customers within same city
-3. The delivery time is affected by the location of the customer city, especially its latitude
+3. The delivery time is affected by the location of the customer city, which depends on the prosperity level of the city (the delivery time is smaller for the customers near to prosperous cities)
 
 ## Credit
 Thanks to Olist for releasing this dataset.
