@@ -8,10 +8,10 @@ library(R2WinBUGS)
 library(readr)
 
 #The directory of the WinBUGS
-WinBUGS_path = "C:/Users/s1155063404/Downloads/WinBUGS14/"
+WinBUGS_path = "C:/Users/Ka Ho/Desktop/WinBUGS14/"
 
 #Working directory
-working_dir = "C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/StatisticalAnalysis"
+working_dir = "C:/Users/Ka Ho/Desktop/Projects/Analysis-of-Brazilian-Ecommerce-Dataset/StatisticalAnalysis"
 
 setwd(working_dir)
 dataset = read_csv("./dataset.csv")
@@ -51,13 +51,12 @@ init = list(beta=rep(0,3), m1=0, m2=0, tau_a=10, tau_u=10, b=0.5)
 para = c("m1", "beta", "m2", "sig_u", "sig_a", "b")
 
 #Run WinBUGS for Bayesian Inference
-# sim = bugs(data="data_base.txt", inits=list(init),
-#            parameters.to.save=para,
-#            model.file="base.txt",
-#            n.chains=1, n.iter=200,
-#            bugs.directory = WinBUGS_path,
-#            working.directory="../WinBUGS_code/")
-# save(sim, file="sim_base.RData")
+sim = bugs(data="data_base.txt", inits=list(init),
+           parameters.to.save=para,
+           model.file="base.txt",
+           n.chains=1, n.iter=800,
+           bugs.directory = WinBUGS_path,
+           working.directory="../WinBUGS_code/")
 
 #Create features for explaining the second-level effect:
 #Return the cluster label for each (state, city); Create the second-level features in this table.
@@ -170,7 +169,6 @@ para = c("beta", "nu1", "nu2", "sig_u", "sig_a", "b")
 # sim = bugs(data="data.txt", inits=list(init),
 #            parameters.to.save=para,
 #            model.file="model.txt",
-#            n.chains=1, n.iter=200,
+#            n.chains=1, n.iter=1000,
 #            bugs.directory=WinBUGS_path,
 #            working.directory="../WinBUGS_code/")
-# save(sim, file="./sim_model.RData")
