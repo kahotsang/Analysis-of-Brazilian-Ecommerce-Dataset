@@ -5,7 +5,7 @@ This project is based on the dataset which was provided by Olist and was release
 The objective of this project is to analyze the delivery time of each order, using visualization and some statistical techniques (particularly regression analysis). I am particularly interested in the effect of _the location of customer / seller_ on the delivery time.
 
 ## Description of Dataset
-The RawDataset contained in this project was adopted from the [original dataset](https://www.kaggle.com/olistbr/brazilian-ecommerce) downloadable from Kaggle. The CleanDataset folder contains the cleaned dataset, together with some GDP information of each Brazilian city and state for further analysis.
+The RawDataset contained in this project was adopted from the [original dataset](https://www.kaggle.com/olistbr/brazilian-ecommerce) downloadable from Kaggle. The CleanDataset folder contains the cleaned dataset, together with some GDP information of Brazilian city (top 100 cities) and state for further analysis.
 
 ## Library Installation
 I used R and WinBUGS (for Bayesian Modelling) in this project. The followings are some necessary R packages for implementing my project:
@@ -24,7 +24,7 @@ I perform regression analysis on the dataset. Particularly, I model the delivery
 ## Conclusion
 1. The distance between buyer and seller has a strong effect on the delivery time
 2. There exists correlation for delivery time of the customers within same city
-3. The delivery time is affected by the location of the customer city, which depends on the prosperity level of the city (the delivery time is smaller for the customers near to prosperous cities)
+3. The delivery time is affected by the location of the customer city, which depends on the prosperity level of the city (the delivery time is smaller for the customers near to prosperous cities) as well as the latitude of the city.
 
 ## Credit
 Thanks to Olist for releasing this dataset.
