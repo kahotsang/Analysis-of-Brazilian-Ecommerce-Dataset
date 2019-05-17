@@ -1,18 +1,16 @@
 #-----------------------------------------------------------------------------
 #Objective: To analyze the second-level effect, on how the location of customer city affects the delivery time
 #Modelling: GLMM
-#This model performs the best when compared with the model in analysis1,
-#which supports my observation that the location of customer city affects delivery time
 #-----------------------------------------------------------------------------
 library(R2WinBUGS)
 library(dplyr)
 library(readr)
 
 #The directory of the WinBUGS
-WinBUGS_path = "C:/Users/Ka Ho/Desktop/WinBUGS14/"
+WinBUGS_path = "C:/Users/s1155063404/Desktop/WinBUGS14"
 
 #Working directory
-working_dir = "C:/Users/Ka Ho/Desktop/Projects/Analysis-of-Brazilian-Ecommerce-Dataset/StatisticalAnalysis"
+working_dir = "C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/StatisticalAnalysis"
 
 setwd(working_dir)
 dataset = read_csv("./dataset.csv")
@@ -123,7 +121,7 @@ cluster = cluster %>%
   left_join(geolocation %>%
               select(customer_state, customer_city, distance2wealthy, lat), by=c("customer_state", "customer_city"))
 
-#Generate data for model: proposed
+#Prepare the dataset
 K = nrow(dataset)
 n_clust = nrow(cluster)
 Y = dataset$delivery_time
@@ -143,12 +141,12 @@ tau_nu = diag(rep(0.0001, 4))
 
 data = list(K=K, n_clust=n_clust, Y=Y, X=X, Z=Z, mu_b=mu_b, tau_b=tau_b, mu_nu=mu_nu, tau_nu=tau_nu,
             i=i, W1=W1, W2=W2, W3=W3)
-bugs.data(data, dir="../WinBUGS_code/", data.file = "data.txt")
+bugs.data(data, dir="../WinBUGS_code/", data.file = "data_model.txt")
 
 init = list(beta=rep(0,3), nu1=rep(0,4), nu2=rep(0,4), tau_a=10, tau_u=10, b=0.5)
 para = c("beta", "nu1", "nu2", "sig_u", "sig_a", "b")
 
-sim = bugs(data="data.txt", inits=list(init),
+sim = bugs(data="data_model.txt", inits=list(init),
            parameters.to.save=para,
            model.file="model.txt",
            n.chains=1, n.iter=1000,

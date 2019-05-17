@@ -1,7 +1,7 @@
 library(dplyr)
 library(readr)
 
-setwd("C:/Users/Ka Ho/Desktop/Projects/Analysis-of-Brazilian-Ecommerce-Dataset/EDA")
+setwd("C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/EDA")
 
 #Load dataset
 raw_geolocation = read_csv("../CleanedDataset/corrected_geolocation.csv")
@@ -205,4 +205,3 @@ dataset = order %>%
   select(size, order_products_value, order_freight_value, distance, cluster, customer_state, customer_city, delivery_time)
 
 write_csv(dataset, "../StatisticalAnalysis/dataset.csv")
-
