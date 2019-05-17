@@ -24,7 +24,7 @@ I perform regression analysis on the dataset. Particularly, I model the delivery
 ## Conclusion
 1. The distance between buyer and seller has a strong effect on the delivery time
 2. There exists correlation for delivery time of the customers within same city
-3. The delivery time is affected by the location of the customer city, which depends on the prosperity level of the city (the delivery time is smaller for the customers near to prosperous cities) as well as the latitude of the city.
+3. The delivery time is affected by the location of the customer city, which depends on the prosperity level of the city (the delivery time is smaller for the customers near to prosperous cities) as well as the latitude of the city (the delivery time increases with the latitude of the city).
 
 ## Credit
 Thanks to Olist for releasing this dataset.
