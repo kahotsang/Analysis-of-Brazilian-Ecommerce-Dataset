@@ -1,8 +1,6 @@
 library(dplyr)
 library(readr)
 
-setwd("C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/EDA")
-
 #Load dataset
 raw_geolocation = read_csv("../CleanedDataset/corrected_geolocation.csv")
 raw_order = read_csv("../CleanedDataset/order.csv")

@@ -9,10 +9,6 @@ library(readr)
 #The directory of the WinBUGS
 WinBUGS_path = "C:/Users/s1155063404/Desktop/WinBUGS14"
 
-#Working directory
-working_dir = "C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/StatisticalAnalysis"
-
-setwd(working_dir)
 dataset = read_csv("./dataset.csv")
 
 #Standardize the observations for modeling

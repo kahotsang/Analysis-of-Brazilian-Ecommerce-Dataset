@@ -1,8 +1,6 @@
 library(dplyr)
 library(readr)
 
-setwd("C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/DataCleaning")
-
 raw_geolocation = read_csv("../RawDataset/geolocation_olist_public_dataset.csv")
 
 #Remove the simulated points that are outside of the Brazil boundary

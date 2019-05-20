@@ -6,8 +6,6 @@
 library(lme4)
 library(readr)
 
-setwd("C:/Users/s1155063404/Desktop/Projects/brazilian-ecommerce-dataset/StatisticalAnalysis")
-
 dataset = read_csv("./dataset.csv")
 
 #Standardize the observations for modeling
