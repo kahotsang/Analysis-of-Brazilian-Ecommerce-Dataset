@@ -2,7 +2,7 @@
 This project is based on the dataset which was provided by Olist and was released by Kaggle. Olist is the largest department store in Brazilian marketplaces. This dataset contains information of 100k orders made at Olist from 2016 to 2018. Please refer to [here](https://www.kaggle.com/olistbr/brazilian-ecommerce) for the details of the original dataset. There could be lots of possible work from this dataset, including sales forecasting, customer review analysis, delivery time analysis, etc. 
 
 ## Objective
-The objective of this project is to analyze the delivery time of each order, using visualization and some statistical techniques (particularly regression analysis). This project is primarily for self-learning purpose (the use of Generalized Linear Mixed Effect Model for multi-level effect). I am particularly interested in the effect of _the location of customer / seller_ on the delivery time.
+The objective of this project is to analyze the delivery time of each order, using visualization and some statistical techniques (particularly regression analysis). This project is primarily for learning purpose, on the use of Generalized Linear Mixed Effect Model for multi-level effect. I am particularly interested in the effect of _the location of customer / seller_ on the delivery time.
 
 ## Description of Dataset
 The RawDataset contained in this project was adopted from the [original dataset](https://www.kaggle.com/olistbr/brazilian-ecommerce) downloadable from Kaggle. The CleanDataset folder contains the cleaned dataset, together with some GDP information of Brazilian city (top 100 cities) and state for further analysis.
