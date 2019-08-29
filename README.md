@@ -27,7 +27,7 @@ I perform regression analysis on the dataset. Particularly, I model the delivery
 3. The delivery time is affected by the location of the customer city, which depends on the prosperity level of the city (the delivery time is smaller for the customers near to prosperous cities) as well as the latitude of the city (the delivery time increases with the latitude of the city).
 
 ## Limitation and Improvement
-In this project, I do not perform much feature engineering because of time constraints. Some potential improvements are to improve the quality of features (e.g. replace straight-line distance with some API-called distance, more treatment or transformation on latitude, longitude of the cities instead of directly using latitude, longitude for analysis.)
+In this project, I do not perform much feature engineering because of time constraints. Some potential improvements are to improve the quality of features. (e.g. more treatment or transformation on latitude, longitude of the cities instead of directly using latitude, longitude for analysis)
 
 ## Credit
 Thanks to Olist for releasing this dataset.
